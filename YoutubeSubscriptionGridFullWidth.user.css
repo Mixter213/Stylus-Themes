@@ -1,0 +1,54 @@
+/* ==UserStyle==
+@name           Youtube Subscription Grid Full Width
+@namespace      github.com/Mixter213
+@version        1.0.0
+@description    Expands the Subscription Grid view to the full width of the screen
+@author         Mixter213
+@preprocessor   stylus
+
+==/UserStyle== */
+@-moz-document domain("youtube.com")
+    
+    html
+        --grid-margin: 8px
+        --ytd-grid-max-width: calc(100% - 60px)
+        --ytd-grid-2-columns-width: 100%
+        --ytd-grid-3-columns-width: 100%
+        --ytd-grid-4-columns-width: 100%
+        --ytd-grid-5-columns-width: 100%
+        --ytd-grid-6-columns-width: 100%
+
+    .grid-6-columns
+        --grid-amount: calc(100% / 6 - ( var(--grid-margin) * 2 ) )
+
+    .grid-5-columns
+        --grid-amount: calc(100% / 5 - ( var(--grid-margin) * 2 ) )
+
+    .grid-4-columns
+        --grid-amount: calc(100% / 4 - ( var(--grid-margin) * 2 ) )
+
+    .grid-3-columns
+        --grid-amount: calc(100% / 3 - ( var(--grid-margin) * 2 ) )
+
+    .grid-2-columns
+        --grid-amount: calc(100% / 2 - ( var(--grid-margin) * 2 ) )
+
+    #contents.ytd-shelf-renderer
+        
+        #items.ytd-grid-renderer
+
+            ytd-grid-video-renderer
+                width: var(--grid-amount)
+                margin: var(--grid-margin)
+
+                ytd-thumbnail.ytd-grid-video-renderer
+                    height auto
+                    width 100%
+                    aspect-ratio 16 / 9
+                    
+                    img.yt-img-shadow
+                        margin: 0
+                        max-width: unset
+                        max-height: unset
+                        border-radius: 0
+                        width: 100%
