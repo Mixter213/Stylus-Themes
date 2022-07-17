@@ -1,0 +1,43 @@
+/* ==UserStyle==
+@name           twitch.tv - 7/16/2022, 2:18:32 PM
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+@preprocessor   stylus
+==/UserStyle== */
+
+@-moz-document domain("twitch.tv") {
+    
+    :root {
+        --font-weight-semibold: 600;
+    }
+    
+
+        .tw-image-avatar {
+            border-radius: 4px !important;
+        }
+
+        .side-nav-card__metadata {
+            display: none;
+        }
+
+        .side-nav-card__live-status {
+            width: 0;
+            min-width: unset;
+        }
+        
+    .side-nav-card__link {
+
+        &:hover {
+            background: red;
+
+            .side-nav-card__live-status {
+                width: unset;
+            }
+
+        }
+
+    }
+
+}
